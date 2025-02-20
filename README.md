@@ -25,4 +25,4 @@ Jawab : Pesawat jatuh. Dengan melakukan disable CollisionShape2D membuat stone t
 Jawab : Posisi Blueship berubah!
 
 9. Pada scene MainLevel, perhatikan nilai atribut Position node PlatformBlue, StonePlatform, dan StonePlatform2. Mengapa nilai Position node StonePlatform dan StonePlatform2 tidak sesuai dengan posisinya di dalam scene (menurut Inspector) namun visualisasinya berada di posisi yang tepat?
-Karena posisi Stoneplatform local terhadap parent nya ( platform blue )
+Jawab : Karena posisi Stoneplatform local terhadap parent nya ( platform blue )
