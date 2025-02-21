@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://2yuhv11sgio1"]
+
+[ext_resource type="Texture2D" uid="uid://bcv4ismcf4od5" path="res://assets/sky1.jpg" id="1_44jka"]
+[ext_resource type="PackedScene" uid="uid://cmg56i3c3ddo5" path="res://scenes/Ship2.tscn" id="2_tmenx"]
+[ext_resource type="Script" path="res://scenes/ship_2.gd" id="3_tg0vs"]
+
+[node name="Level2" type="Node2D"]
+
+[node name="Sky1" type="Sprite2D" parent="."]
+position = Vector2(575, 325)
+texture = ExtResource("1_44jka")
+
+[node name="BlueShip" parent="." instance=ExtResource("2_tmenx")]
+position = Vector2(165, 342)
+script = ExtResource("3_tg0vs")

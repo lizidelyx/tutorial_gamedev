@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cdoksexcakmop"]
+[gd_scene load_steps=7 format=3 uid="uid://cdoksexcakmop"]
 
 [ext_resource type="PackedScene" uid="uid://y5a4e3ajuy2r" path="res://scenes/StonePlatform.tscn" id="1"]
 [ext_resource type="PackedScene" uid="uid://datfp8kxjrjg" path="res://scenes/BlueShip.tscn" id="2"]
@@ -8,10 +8,13 @@
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(138.75, 79)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4tw6j"]
+size = Vector2(1154, 20)
+
 [node name="MainLevel" type="Node"]
 
 [node name="PlatformBlue" type="Node2D" parent="."]
-position = Vector2(35, 565)
+position = Vector2(104, 590)
 script = ExtResource("3")
 
 [node name="StonePlatform" parent="PlatformBlue" instance=ExtResource("1")]
@@ -19,15 +22,35 @@ script = ExtResource("3")
 [node name="StonePlatform2" parent="PlatformBlue" instance=ExtResource("1")]
 position = Vector2(70, 0)
 
+[node name="StonePlatform3" parent="PlatformBlue" instance=ExtResource("1")]
+position = Vector2(137, -65)
+
+[node name="StonePlatform4" parent="PlatformBlue" instance=ExtResource("1")]
+position = Vector2(-67, -66)
+
 [node name="BlueShip" parent="." instance=ExtResource("2")]
-position = Vector2(72.7009, 421.901)
+position = Vector2(136, 365)
 lock_rotation = true
 
 [node name="ObjectiveArea" type="Area2D" parent="."]
 script = ExtResource("4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ObjectiveArea"]
-position = Vector2(70.625, 40)
+position = Vector2(1080, 42)
 shape = SubResource("1")
 
+[node name="TextEdit" type="TextEdit" parent="ObjectiveArea/CollisionShape2D"]
+offset_left = -96.0
+offset_top = -17.0
+offset_right = 65.0
+offset_bottom = 16.0
+text = "GET HERE TO START"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(580, 660)
+shape = SubResource("RectangleShape2D_4tw6j")
+
 [connection signal="body_entered" from="ObjectiveArea" to="ObjectiveArea" method="_on_ObjectiveArea_body_entered"]
+[connection signal="body_entered" from="Area2D" to="ObjectiveArea" method="_on_area_2d_body_entered"]
