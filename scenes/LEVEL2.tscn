@@ -11,5 +11,5 @@ position = Vector2(575, 325)
 texture = ExtResource("1_44jka")
 
 [node name="BlueShip" parent="." instance=ExtResource("2_tmenx")]
-position = Vector2(165, 342)
+position = Vector2(582, 603)
 script = ExtResource("3_tg0vs")
